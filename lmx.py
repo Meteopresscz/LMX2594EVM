@@ -7,7 +7,7 @@ import binascii
 import re
 import logging
 
-logging.getLogger("lmx")
+logger = logging.getLogger("lmx")
 
 
 MAGIC_INIT = ["3f0c547004010001006a",
