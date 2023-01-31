@@ -81,7 +81,7 @@ def set_registers(h, regs):
 	logger.info("Setting registers")
 	for reg,val in regs.items():
 		contents = binascii.unhexlify(val)
-		setreg(reg, contents)
+		setreg(h,reg, contents)
 		time.sleep(0.001)
 
 def close_device(h):
@@ -93,13 +93,13 @@ def close_device(h):
 def start_pll(regs):
 	h = open_device()
 	set_registers(h,regs)
-	close_device()
+	close_device(h)
 
 def parse_regfile(filename):
 	regs = {}
 	with open(sys.argv[1],"r") as f:
 		for line in f:
-			m = re.fullmatch("R([0-9]{1,3})\t0x([0-9A-Z]{6})", l.strip())
+			m = re.fullmatch("R([0-9]{1,3})\t0x([0-9A-Z]{6})", line.strip())
 			if not m:
 				print("Bad file format, cannot match %s"%l)
 				sys.exit(1)
