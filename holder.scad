@@ -80,6 +80,8 @@ difference() {
   translate([120,-10,-1]) cube([50,27,10]);
   translate([33.5,70,-1]) cube([11,25,10]);
   translate([111,86,-1]) cube([40,25,10]);
+  
+  translate([9,45,-1]) cube([7,15,10]); // xtal hole
 }
     
 *translate([56.5,0,0]) hold(1.2);

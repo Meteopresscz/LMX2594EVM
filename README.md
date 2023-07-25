@@ -25,6 +25,12 @@ To capture and replay commands from the TICS Pro app:
 
 ## Board holder
 
- * Print holder.scad
+ * Print `holder.scad`
  * Use 2.5x6 screws for plastic, e.g. Bossard 3034063 or 2000156
 
+## Convert HexRegisterValues.txt to Meteopress radar internal format
+
+ * `dos2unix HexRegisterValues.txt`
+ * `cat HexRegisterValues.txt | sed -re "s/^R/\"/" -e "s/\t0x/\":\"/g" -e "s/$/\",/g"`
+ * add `{}` to make it a json object
+ * save to `config/lmx/registers.json`
