@@ -43,6 +43,7 @@ def sendmsg(h, msg):
 			break
 
 def open_device():
+	global serial
 	logger.info("Opening the device")
 
 	h = hid.device()
@@ -54,6 +55,9 @@ def open_device():
 
 	# enable non-blocking mode
 	h.set_nonblocking(1)
+
+	# reset serial
+	serial = 8
 
 	logger.info("Sending initializing commands")
 	for m in MAGIC_INIT:
