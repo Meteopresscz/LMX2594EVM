@@ -33,4 +33,4 @@ To capture and replay commands from the TICS Pro app:
  * `dos2unix HexRegisterValues.txt`
  * `cat HexRegisterValues.txt | sed -re "s/^R/\"/" -e "s/\t0x/\":\"/g" -e "s/$/\",/g"`
  * add `{}` to make it a json object
- * save to `config/lmx/registers.json`
+ * save to `config/pll/lmx/registers.json`
