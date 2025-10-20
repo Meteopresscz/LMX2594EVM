@@ -34,3 +34,6 @@ To capture and replay commands from the TICS Pro app:
  * `cat HexRegisterValues.txt | sed -re "s/^R/\"/" -e "s/\t0x/\":\"/g" -e "s/$/\",/g"`
  * add `{}` to make it a json object
  * save to `config/pll/lmx/registers.json`
+
+## How to convert back
+ * `cat /tmp/LMX-C-doubler_lowspurs.txt.json | tr -d \", | sed -re "s/^/R/" -e "s/:/\t0x/" > LMX-C-doubler_lowspurs.txt`
